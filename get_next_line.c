@@ -6,7 +6,7 @@
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 13:33:44 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/03 10:41:42 by kcetin           ###   ########.fr       */
+/*   Updated: 2022/02/03 10:52:56 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ char	*get_next_line(int fd)
 		else
 			s = ft_strjoin(s, buffer);
 		if (ft_strchr(buffer, '\n'))
-			return (0);
+			break ;
 		size = read(fd, buffer, BUFFER_SIZE);
 		buffer[size] = 0;
 	}
