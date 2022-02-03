@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 13:33:44 by kcetin            #+#    #+#             */
-/*   Updated: 2022/01/18 18:20:31 by kcetin           ###   ########.fr       */
+/*   Updated: 2022/02/03 10:15:51 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_BONUS_H
 # define GET_NEXT_LINE_BONUS_H
+
+# include <stdlib.h>
+# include <stdio.h>
+# include <fcntl.h>
+# include <unistd.h>
+
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 9999
 # endif
-
-#include <stdlib.h>
-#include <unistd.h>
 
 char	*ft_strjoin(char *s1, const char *s2);
 char	*get_next_line(int fd);
