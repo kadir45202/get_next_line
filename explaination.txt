@@ -1,9 +1,0 @@
-asıl hepsini koduğumuz değişken s
-buffer belirli bayt kadarı tuttuğumuz ve s'e gönderdiğimiz geçiçi değişken
-belli kontroller size boş mu falan
-sonuna 0 koyuyoruz
-eğer boş ise ft_strdup
-değilse bufferi s'e ekle
-eğer buffer içinde \n varsa bitir
-yine sonuna 0 koyuyoruz
-size 0 dan büyük olana kadar devam et
