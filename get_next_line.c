@@ -34,10 +34,11 @@ char	*get_next_line(int fd)
 {
 	static char	*s;
 	char		*dest;
-	char		buffer[BUFFER_SIZE + 1];
+	char		*buffer;
 	int			size;
 
-	size = read(fd, buffer, BUFFER_SIZE);
+buffer = malloc(BUFFER_SIZE + 1);
+size = read(fd, buffer, BUFFER_SIZE);
 	if (size == -1)
 		return (NULL);
 	buffer[size] = 0;
@@ -54,6 +55,7 @@ char	*get_next_line(int fd)
 	}
 	dest = ft_substr(s, 0, ft_strchr(s, '\n') - s + 1);
 	s = move_line(s);
+	free(buffer);
 	return (dest);
 }
 
