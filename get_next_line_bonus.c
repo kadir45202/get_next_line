@@ -32,7 +32,7 @@ char	*move_line(char *s)
 
 char	*get_next_line(int fd)
 {
-	static char	*s[9999];
+	static char	*s;
 	char		*dest;
 	char		*buffer;
 	int			size;
