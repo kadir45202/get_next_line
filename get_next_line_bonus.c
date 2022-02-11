@@ -45,9 +45,9 @@ size = read(fd, buffer, BUFFER_SIZE);
 	while (size > 0)
 	{
 		if (!s[fd])
-			s = ft_strdup(buffer);
+			s[fd] = ft_strdup(buffer);
 		else
-			s = ft_strjoin(s, buffer);
+			s[fd] = ft_strjoin(s[fd], buffer);
 		if (ft_strchr(buffer, '\n'))
 			break ;
 		size = read(fd, buffer, BUFFER_SIZE);
