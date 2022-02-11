@@ -32,7 +32,7 @@ char	*move_line(char *s)
 
 char	*get_next_line(int fd)
 {
-	static char	*s;
+	static char	*s[9999];
 	char		*dest;
 	char		*buffer;
 	int			size;
@@ -44,17 +44,17 @@ size = read(fd, buffer, BUFFER_SIZE);
 	buffer[size] = 0;
 	while (size > 0)
 	{
-		if (!s)
-			s = ft_strdup(buffer);
+		if (!s[fd])
+			s[fd] = ft_strdup(buffer);
 		else
-			s = ft_strjoin(s, buffer);
+			s[fd] = ft_strjoin(s, buffer);
 		if (ft_strchr(buffer, '\n'))
 			break ;
 		size = read(fd, buffer, BUFFER_SIZE);
 		buffer[size] = 0;
 	}
-	dest = ft_substr(s, 0, ft_strchr(s, '\n') - s + 1);
-	s = move_line(s);
+	dest = ft_substr(s[fd], 0, ft_strchr(s[fd], '\n') - s[fd] + 1);
+	s[fd] = move_line(s[fd]);
 	free(buffer);
 	return (dest);
 }
