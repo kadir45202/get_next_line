@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 13:33:44 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/03 10:52:56 by kcetin           ###   ########.fr       */
+/*   Created: 2022/02/12 12:45:17 by kcetin            #+#    #+#             */
+/*   Updated: 2022/02/12 15:48:46 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,8 @@ char	*get_next_line(int fd)
 	char		*buffer;
 	int			size;
 
-buffer = malloc(BUFFER_SIZE + 1);
-size = read(fd, buffer, BUFFER_SIZE);
-	if (size == -1)
-		return (NULL);
+	buffer = malloc(BUFFER_SIZE + 1);
+	size = read(fd, buffer, BUFFER_SIZE);
 	buffer[size] = 0;
 	while (size > 0)
 	{
@@ -58,29 +56,3 @@ size = read(fd, buffer, BUFFER_SIZE);
 	free(buffer);
 	return (dest);
 }
-
-/*
-#include "get_next_line.h"
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-
-int main()
-{
-    int fd1 = open("test.txt", O_RDONLY);
-
-
-    int i = 1;
-    char *nl;
-    nl = get_next_line(fd1);
-    
-    while (i < 10)
-    {
-        nl = get_next_line(fd1);
-        printf("%s", nl);
-        i++;
-    }
-    close (fd1);
-}
-*/
