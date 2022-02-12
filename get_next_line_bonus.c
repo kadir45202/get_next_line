@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kcetin <kcetin@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/14 13:33:44 by kcetin            #+#    #+#             */
-/*   Updated: 2022/02/08 18:47:33 by kcetin           ###   ########.fr       */
+/*   Created: 2022/02/12 12:44:36 by kcetin            #+#    #+#             */
+/*   Updated: 2022/02/12 12:46:05 by kcetin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ char	*get_next_line(int fd)
 	char		*dest;
 	char		*buffer;
 	int			size;
-
-buffer = malloc(BUFFER_SIZE + 1);
-size = read(fd, buffer, BUFFER_SIZE);
+    
+    buffer = malloc(BUFFER_SIZE + 1);
+	size = read(fd, buffer, BUFFER_SIZE);
 	if (size == -1)
 		return (NULL);
 	buffer[size] = 0;
@@ -55,6 +55,6 @@ size = read(fd, buffer, BUFFER_SIZE);
 	}
 	dest = ft_substr(s[fd], 0, ft_strchr(s[fd], '\n') - s[fd] + 1);
 	s[fd] = move_line(s[fd]);
-	free(buffer);
+    free(buffer);
 	return (dest);
 }
