@@ -39,8 +39,6 @@ char	*get_next_line(int fd)
     
     buffer = malloc(BUFFER_SIZE + 1);
 	size = read(fd, buffer, BUFFER_SIZE);
-	if (size == -1)
-		return (NULL);
 	buffer[size] = 0;
 	while (size > 0)
 	{
